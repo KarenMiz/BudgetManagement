@@ -19,8 +19,7 @@ npm install
 ולוודא ששורת החיבור (`connectionString`) מצביעה אל ה־**Database** הנכון שלך. לדוגמה:
 
 ```csharp
-builder.Services.AddDbContext<AccountManagementDbContext>(options =>
-    options.UseSqlServer("Server=.;Database=BudgetManager;Trusted_Connection=True;TrustServerCertificate=True;"));
+ string connectionString = "Server=YOUR_DB; Database=AccountManagementDb; Trusted_Connection=True;TrustServerCertificate=True;";
 ```
 
 🔴 **החלף את שם מסד הנתונים (`BudgetManager`) לשם שבחרת אצלך ב־SQL Server.**
