@@ -22,7 +22,7 @@ npm install
  string connectionString = "Server=YOUR_DB; Database=AccountManagementDb; Trusted_Connection=True;TrustServerCertificate=True;";
 ```
 
-🔴 **החלף את שם מסד הנתונים (`BudgetManager`) לשם שבחרת אצלך ב־SQL Server.**
+🔴 **החלף את שם מסד הנתונים (`YOUR_DB`) לשם שבחרת אצלך ב־SQL Server.**
 
 🧾 שלב שלישי: הרצת סקריפטים של קטגוריות
  SQL בשרת - גש לתיקיית ה
