@@ -1,70 +1,85 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📘 Budget Manager - README
+===========================
 
-## Available Scripts
+ברוכים הבאים לפרויקט ניהול התקציב האישי!  
+לפניכם הוראות התקנה ראשוניות להפעלת המערכת בצורה תקינה.
 
-In the project directory, you can run:
+📦 שלב ראשון: התקנת ספריות ה־Node
+----------------------------------
+בטרמינל, יש להריץ את הפקודה הבאה מתוך תיקיית הפרונטאנד:
 
-### `npm start`
+```
+npm install
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+🛠️ שלב שני: עדכון קובץ החיבור למסד הנתונים
+------------------------------------------
+בפרויקט של צד השרת (ASP.NET Core), יש להיכנס לקובץ `Program.cs`  
+ולוודא ששורת החיבור (`connectionString`) מצביעה אל ה־**Database** הנכון שלך. לדוגמה:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```csharp
+builder.Services.AddDbContext<AccountManagementDbContext>(options =>
+    options.UseSqlServer("Server=.;Database=BudgetManager;Trusted_Connection=True;TrustServerCertificate=True;"));
+```
 
-### `npm test`
+🔴 **החלף את שם מסד הנתונים (`BudgetManager`) לשם שבחרת אצלך ב־SQL Server.**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+🧾 שלב שלישי: הרצת סקריפטים של קטגוריות
+ SQL בשרת - גש לתיקיית ה
+---------------------------------------
+יש להריץ **את שני הסקריפטים** המצורפים (`IncomeCategoriesScripr.sql` ו־`ExpenseCategoriesScript.sql`) על מסד הנתונים,  
+כדי לוודא שהאפליקציה תעבוד עם הקטגוריות הבסיסיות.
 
-### `npm run build`
+🤖 שלב רביעי: שימוש ב־GPT
+---------------------------
+המערכת כוללת יכולת של ניתוח AI מבוסס GPT.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+> על מנת להפעיל את ה־API של GPT, יש לפנות אליי לקבלת המפתח האישי (`API Key`).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+📱 ניתן לפנות אליי גם דרך **WhatsApp** לקבלת המפתח. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+לאחר קבלת המפתח:
 
-### `npm run eject`
+1. פתח את קובץ `appsettings.json` בפרויקט של השרת.
+2. הוסף את השורה הבאה:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```json
+"GptSettings": {
+  "ApiKey": "הכנס כאן את המפתח שלך"
+}
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. שמור והפעל את השרת כרגיל.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+🚀 הפעלת המערכת
+----------------
+- ודא שהשרת פעיל (`dotnet run` או דרך Visual Studio).
+- ודא שהפרונט פועל (`npm start`).
+- פתח את הדפדפן בכתובת `http://localhost:3000`.
 
-## Learn More
+בהצלחה 🎉  
+אם יש לך שאלות או תקלות – אני כאן!
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## אודות הפרויקט
 
-### Code Splitting
+מערכת ניהול תקציב אישי המאפשרת למשתמשים לעקוב אחר הכנסות והוצאות חודשיות בצורה מסודרת וידידותית למשתמש.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### תכונות עיקריות:
+- רישום הכנסות והוצאות לפי קטגוריות (כגון: שכר, שכירות, קניות, בילויים וכו').
+- צפייה במידע החודשי באמצעות גרף פאי מפורט.
+- עריכת נתונים חודשיים גם על חודשים קודמים.
+- ממשק משתמש אינטואיטיבי הבנוי ב־React.
+- הרשמה כלקוח Basic (גישה מלאה לניהול תקציב) או כלקוח PRO (גישה ל־GPT לקבלת המלצות ניהול חכמות).
+- ניתוח נתוני התקציב עם בינה מלאכותית (ללקוחות PRO בלבד).
 
-### Analyzing the Bundle Size
+### התממשקות עם GitHub:
+הקוד כולו מנוהל ב־GitHub. ניתן לשכפל את הריפוזיטורי באמצעות הפקודה:
+```bash
+SERVER: clone https://github.com/KarenMiz/AccountManagementServer
+CLIENT: clone https://github.com/KarenMiz/BudgetManagement
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
