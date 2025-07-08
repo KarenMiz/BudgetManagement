@@ -22,6 +22,8 @@ npm install
  string connectionString = "Server=YOUR_DB; Database=AccountManagementDb; Trusted_Connection=True;TrustServerCertificate=True;";
 ```
 🗄️ שלב שלישי: הרצת מיגרציה ליצירת הטבלאות במסד הנתונים
+
+------------------------------------------
 לאחר עדכון ה-Connection String, יש להריץ את הפקודה הבאה בפרויקט צד השרת כדי ליצור את הטבלאות במסד הנתונים:
 
 
