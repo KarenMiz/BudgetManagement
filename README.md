@@ -24,9 +24,7 @@ npm install
 🗄️ שלב שלישי: הרצת מיגרציה ליצירת הטבלאות במסד הנתונים
 לאחר עדכון ה-Connection String, יש להריץ את הפקודה הבאה בפרויקט צד השרת כדי ליצור את הטבלאות במסד הנתונים:
 
-bash
-Copy
-Edit
+
 dotnet ef database update
 
 
