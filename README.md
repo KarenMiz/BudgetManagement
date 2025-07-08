@@ -21,16 +21,24 @@ npm install
 ```csharp
  string connectionString = "Server=YOUR_DB; Database=AccountManagementDb; Trusted_Connection=True;TrustServerCertificate=True;";
 ```
+🗄️ שלב שלישי: הרצת מיגרציה ליצירת הטבלאות במסד הנתונים
+לאחר עדכון ה-Connection String, יש להריץ את הפקודה הבאה בפרויקט צד השרת כדי ליצור את הטבלאות במסד הנתונים:
+
+bash
+Copy
+Edit
+dotnet ef database update
+
 
 🔴 **החלף את שם מסד הנתונים (`YOUR_DB`) לשם שבחרת אצלך ב־SQL Server.**
 
-🧾 שלב שלישי: הרצת סקריפטים של קטגוריות
+🧾 שלב רביעי: הרצת סקריפטים של קטגוריות
  SQL בשרת - גש לתיקיית ה
 ---------------------------------------
 יש להריץ **את שני הסקריפטים** המצורפים (`IncomeCategoriesScripr.sql` ו־`ExpenseCategoriesScript.sql`) על מסד הנתונים,  
 כדי לוודא שהאפליקציה תעבוד עם הקטגוריות הבסיסיות.
 
-🤖 שלב רביעי: שימוש ב־GPT
+🤖 שלב חמישי: שימוש ב־GPT
 ---------------------------
 המערכת כוללת יכולת של ניתוח AI מבוסס GPT.
 
